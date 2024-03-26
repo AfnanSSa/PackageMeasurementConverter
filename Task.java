@@ -20,7 +20,7 @@ public class PackageConverter {
         Integer currentIndex = 0; // This index is just a pointer
         while (currentIndex < inputLength) {
             char currentCharacter = input.charAt(currentIndex);
-            if (currentCharacter >= 'a' && currentCharacter <= 'z') {
+            if (currentCharacter >= 'a' && currentCharacter <= 'z') { //comparison using ASCII code of letters
                 int numOfNextCharsToCount = (currentCharacter - 'a') + 1;
                 currentIndex++;
                 String sequence = "";
