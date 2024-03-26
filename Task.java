@@ -7,13 +7,13 @@ public class PackageConverter {
         System.out.println("Enter the measurement string:");
         String userInput = scanner.nextLine();
         scanner.close();
-        // Call the measurementConverter method to convert the input string
+        //calling the measurementConverter method to convert the input string
         List<Integer> encodedValue = measurementConverter(userInput.toLowerCase());
-        // Print the input string  with the converted values
+        //printing the input string  with the converted values
         System.out.println("Input: " + userInput + ", Measurement: " + encodedValue);
     }
 
-    // Method to convert the measurement string into numerical values
+    // method to convert the measurement string into numerical values
     public static List<Integer> measurementConverter(String input) {
         List<Integer> convertedValues = new ArrayList<>();
         Integer inputLength = input.length();
@@ -24,7 +24,7 @@ public class PackageConverter {
                 int numOfNextCharsToCount = (currentCharacter - 'a') + 1;
                 currentIndex++;
                 String sequence = "";
-                boolean zEncountered = false; // Flag to track if 'z' is encountered within the sequence
+                boolean zEncountered = false; //flag to track if 'z' is encountered within the sequence
                 Integer i = 0;
                 while ((i < numOfNextCharsToCount) && (currentIndex < inputLength)) {
                     char charToCount = input.charAt(currentIndex++);
@@ -56,17 +56,13 @@ public class PackageConverter {
         }
         return convertedValues;
     }
-
-    /*
-     * Method nonAlphabetical checker
-     */
+    
+    //method to checker nonAlphabetical characters 
     public static boolean isNonAlphabetical(char character) {
         return "@!#$%^&*()_<>{}[]".indexOf(character) != -1;
     }
 
-    /*
-     * Calculates the value of the given input string.
-     */
+    //method to calculate the value of the given input string
     public static int calculateValue(String input) {
         Integer value = 0;
         for (char letter : input.toCharArray()) {
